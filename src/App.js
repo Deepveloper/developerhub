@@ -26,7 +26,7 @@ class App extends Component{
 
  componentDidMount=()=>{
             fetch('https://api.github.com/search/users?q=+language:${this.state.language}+location:${this.state.location}')
-            
+                  .then(response=> response.json())
             .then(users=>{this.setState({result:users})}
 
                     );
